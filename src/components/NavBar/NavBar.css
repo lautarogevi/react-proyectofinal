@@ -1,0 +1,59 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1A1C20;
+    height: 80px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.logoHeader {
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    cursor: pointer;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li:hover {
+    background-color: #3d3e5a;
+}
+
+header nav ul li ul {
+    position: absolute;
+    background-color: #2b2d42;
+    min-width: 200px;
+    display: none;
+    padding-inline-start: 0px;
+}
+
+header nav ul li ul li {
+    padding: 10px 20px;
+}
+
+header nav ul li:hover ul {
+    display: block;
+}
