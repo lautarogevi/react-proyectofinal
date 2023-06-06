@@ -2,14 +2,14 @@ import React from 'react'
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
 import { NavLink, Link } from 'react-router-dom'
-import imgLogo from '../../assets/img/vag-logo-nuevo.png'
+import imgLogo from '../../img/vag-logo-nuevo.png'
 
 const NavBar = () => {
 
     return (
     <header>
         <Link to={"/"}> 
-            <img className='logoHeader' src={imgLogo} alt="VAG Imports"/> 
+            <img className='logoHeader' height={80} width={350} src={imgLogo} alt="VAG Imports"/> 
         </Link>
         
         <nav>

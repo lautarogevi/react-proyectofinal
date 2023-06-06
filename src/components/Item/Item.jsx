@@ -5,8 +5,8 @@ const Item = ({id, nombre, precio, img}) => {
     return (
         <div className='cardProducto'>
             <img className='imgProducto' src={img} alt={nombre} />
-            <h3>Nombre: {nombre}</h3>
-            <p>Precio {precio} </p>
+            <h3>Nombre: {nombre} </h3>
+            <p>Precio: {precio} </p>
             <p>ID: {id} </p>
             <Link to={`/item/${id}`} > Ver Detalles </Link>
         </div>
@@ -15,7 +15,5 @@ const Item = ({id, nombre, precio, img}) => {
 
 export default Item
 
-
-// <button className='btnProducto'> Ver detalles </button>
 
 

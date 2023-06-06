@@ -7,7 +7,7 @@ const ItemDetail = ({id, nombre, precio, img}) => {
             <h3>Precio: {precio} </h3>
             <h3>ID: {id} </h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit exercitationem nemo, in, sed debitis voluptate eos voluptatum alias fuga quasi incidunt enim quam unde ad minima esse saepe molestias sint.</p>
-            <img src={img} alt={nombre} />
+            <img className='imgDetail' src={img} alt={nombre} />
         </div>
     )
 }

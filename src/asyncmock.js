@@ -1,8 +1,8 @@
 const productos = [
-    {nombre: "Yerba", precio: 500, id: "1", img: "./img/yerba.jpg", idCat:"2" },
-    {nombre: "Fideos", precio: 180, id: "2", img: "./img/fideos.jpg", idCat:"2" },
-    {nombre: "Arroz", precio: 200, id: "3", img: "./img/arroz.jpg", idCat:"3" },
-    {nombre: "Aceite", precio: 400, id: "4", img: "./img/aceite.jpg", idCat:"3" },
+    {nombre: "Cachas", precio: 500, id: "1", img: "../img/cachas-carbono.jpg", idCat:"2" },
+    {nombre: "Exhaust", precio: 180, id: "2", img: "../img/exhaust.jpeg", idCat:"2" },
+    {nombre: "Spoiler", precio: 200, id: "3", img: "../img/spoiler-techart.jpeg", idCat:"3" },
+    {nombre: "Volante", precio: 420, id: "4", img: "../img/volantemb.jpg", idCat:"3" },
 ]
 
 
@@ -10,7 +10,7 @@ export const getProductos = () => {
     return new Promise((resolve) => {
         setTimeout( () => {
             resolve(productos)
-        }, 2000)
+        }, 100)
     })
 }
 
@@ -20,7 +20,7 @@ export const getUnProducto = (id) => {
         setTimeout(() => {
             const producto = productos.find(prod => prod.id === id);
             resolve(producto);
-        }, 2000);
+        }, 100);
     })
 }
 

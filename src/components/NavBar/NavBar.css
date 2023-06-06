@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&family=Quicksand:wght@300;400&display=swap");
+
 header {
     display: flex;
     flex-wrap: wrap;
@@ -14,46 +16,42 @@ header {
 }
 
 
-header nav {
-    display: flex;
-    align-items: center;
-}
-
-header nav ul {
+.navBar {
     list-style: none;
     display: flex;
     gap: 50px;
     cursor: pointer;
+    margin-bottom: 0;
 }
 
-header nav ul li {
-    position: relative;
-}
 
-header nav ul li {
-    color: #fff;
-    text-decoration: none;
+.navBar li {
     display: block;
     padding: 10px;
     transition: all 0.3s ease;
 }
 
-header nav ul li:hover {
+.navBar li a {
+    color: #f1f1f1ea;
+    text-decoration: none;
+}
+
+.navBar li:hover {
     background-color: #3d3e5a;
 }
 
-header nav ul li ul {
+/* .navBar li ul {
     position: absolute;
     background-color: #2b2d42;
-    min-width: 200px;
+    min-width: 200px;               //Esto es para las categorias extra
     display: none;
     padding-inline-start: 0px;
-}
+} */
 
-header nav ul li ul li {
-    padding: 10px 20px;
-}
+/* .navBar li ul li {
+    padding: 10px 20px;     // Esto es para las categorias extra
+} */
 
-header nav ul li:hover ul {
+.navBar li:hover ul {
     display: block;
 }
