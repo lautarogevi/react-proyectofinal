@@ -2,11 +2,11 @@ import "./Checkout.css"
 import { useState, useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { db } from "../../services/config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDoc, updateDoc, doc } from "firebase/firestore";
 
 
 const Checkout = () => {
-    const { carrito, vaciarCarrito } = useContext(CarritoContext);
+    const { carrito, vaciarCarrito, total } = useContext(CarritoContext);
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
     const [telefono, setTelefono] = useState("");
@@ -43,20 +43,42 @@ const Checkout = () => {
             nombre,
             apellido,
             telefono, 
-            email
+            email,
+            fecha: new Date(),
         };
 
-        // Paso 2: Guardamos el objeto en la base de datos.
-        addDoc(collection(db, "ordenes"), orden)
-            .then(docRef => {
-                setOrdenId(docRef.id);
-                vaciarCarrito();
+
+        // Vamos a modificar el codigo para que ejecute varias promesas en paralelo, por un lado que actualice el stock de productos y por otro que genere una orden de compra. Promise.All me permite esto:
+
+        Promise.all(
+            orden.items.map(async(productoOrden) => {
+                // Por cada producto en la coleccion inventario obtengo una referencia y a partir de esa referencia obtengo el doc.
+                const productoRef = doc(db, "inventario", productoOrden.id);
+                const productoDoc = await getDoc(productoRef);
+                const stockActual = productoDoc.data().stock;
+                // Data es un metodo que me permite acceder a la informacion del Documento.
+                await updateDoc(productoRef, {
+                    stock: stockActual - productoOrden.cantidad,
+                });
+                // Modifico el stock y subo la informacion actualizada.
             })
-            .catch(error => {
-                console.error("Error al crear la orden", error);
-                setError("Se produjo un error al crear la orden, vuelva pronto");
+        )
+            .then(() => {
+                // Vamos a guardar la orden de compra en la base de datos.
+                addDoc(collection(db, "ordenes"), orden)
+                    .then((docRef) => {
+                        setOrdenId(docRef.id);
+                        vaciarCarrito();
+                    })
+                    .catch((error) => {
+                        console.error("Error al crear la orden.", error);
+                        setError("Se produjo un error al crear la orden.")
+                    })
             })
-            
+            .catch((error) => {
+                console.error("Error al actualizar el stock", error);
+                setError("Se produjo un error al actualizar el stock de los productos, vuelva más tarde.");
+            })
     }
 
 
@@ -74,6 +96,7 @@ const Checkout = () => {
                         <hr />
                     </div>
                 ))}
+                <p> Total compra: {total} </p>
                 <hr />
                 <div className="form-group">
                     <label htmlFor=""> Nombre </label>
