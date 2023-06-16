@@ -1,8 +1,8 @@
 const productos = [
-    {nombre: "Cachas", precio: 500, id: "1", img: "../img/cachas-carbono.jpg", idCat:"2" },
-    {nombre: "Exhaust", precio: 180, id: "2", img: "../img/exhaust.jpeg", idCat:"2" },
-    {nombre: "Spoiler", precio: 200, id: "3", img: "../img/spoiler-techart.jpeg", idCat:"3" },
-    {nombre: "Volante", precio: 420, id: "4", img: "../img/volantemb.jpg", idCat:"3" },
+    {nombre: "Cachas", precio: 500, stock: 10, id: "1", img: "../img/cachas-carbono.jpg", idCat:"2" },
+    {nombre: "Exhaust", precio: 180, stock: 10, id: "2", img: "../img/exhaust.jpeg", idCat:"2" },
+    {nombre: "Spoiler", precio: 200, stock: 5, id: "3", img: "../img/spoiler-techart.jpeg", idCat:"3" },
+    {nombre: "Volante", precio: 420, stock: 10, id: "4", img: "../img/volantemb.jpg", idCat:"3" },
 ]
 
 
