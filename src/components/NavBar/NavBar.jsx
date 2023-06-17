@@ -18,7 +18,7 @@ const NavBar = () => {
                     <NavLink to={"/"} > HOME </NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/categoria/2"} > SERVICIOS </NavLink>
+                    <NavLink to={"/categoria/2"} > PERFORMANCE </NavLink>
                 </li>
                 <li>
                     <NavLink to={"/categoria/3"} > ACCESORIOS </NavLink>
@@ -39,21 +39,3 @@ const NavBar = () => {
 }
 
 export default NavBar
-
-/**
- * <ul>
-                        <li> Potenciación </li>
-                        <li> Cambio de aceite y filtros </li>
-                        <li> Service de caja </li>
-                        <li> Tratamientos cerámico y acrílico </li>
-                    </ul>
- 
- <ul>
-                        <li> Exhaust Sistem </li>
-                        <li> Aerodinamic and Styling </li>
-                    </ul>
- 
- 
- 
- 
-                    */

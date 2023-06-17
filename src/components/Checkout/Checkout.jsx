@@ -32,7 +32,7 @@ const Checkout = () => {
             return;
         }
 
-        // Paso 1: Creamos el objeto de la orden:
+        // Creamos el objeto de la orden:
         const orden = {
             items: carrito.map(producto => ({
                 id: producto.item.id,
@@ -47,8 +47,6 @@ const Checkout = () => {
             fecha: new Date(),
         };
 
-
-        // Vamos a modificar el codigo para que ejecute varias promesas en paralelo, por un lado que actualice el stock de productos y por otro que genere una orden de compra. Promise.All me permite esto:
 
         Promise.all(
             orden.items.map(async(productoOrden) => {

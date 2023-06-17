@@ -1,10 +1,6 @@
 import React from 'react'
 import Producto from '../Producto/Producto'
 
-// Las "props" son objetos que los componentes padres le pasan a sus hijos con informacion importante para ser renderizada
-// Se pasan como parametros en una funcion.
-// Esto favorece a la reutilizacion de componentes 
-
 const ContenedorProductos = () => {
     const props = {
         nombre: "Pan",

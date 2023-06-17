@@ -63,5 +63,3 @@ export const CarritoProvider = ({ children }) => {
         </CarritoContext.Provider>
     )
 }
-
-// 6) Children: propiedad especial que se utiliza para representar a todos aquellos componentes que puedan necesitar el carrito y sus metodos.
