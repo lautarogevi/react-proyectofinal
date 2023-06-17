@@ -3,7 +3,13 @@
     filter: invert(1);
     opacity: 0.85;
 }
-strong {
-    margin-right: 50px;
-    color: #f1f1f1ea;
+
+.contenedorCarrito {
+    margin-right: 15px;
+}
+
+.contadorCantidad {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
 }
